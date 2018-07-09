@@ -1,11 +1,11 @@
-//EventEmitter is a class.
-const EventEmitter = require('events');
+const http = require('http');
 
-const Logger = require('./logger');
-const logger = new Logger();
-//Register a listener
-logger.on('messageLogged', (eventArgs)=> console.log(`Listner called. Args sent are ${eventArgs.message}`));
+//server object is an event emitter.
+const server = http.createServer();
 
-logger.log('File read completed');
+server.on('connection', (socket)=> {console.log('New connection')});
 
+server.listen(3000);
+
+console.log('Listening on port 3000...');
 
