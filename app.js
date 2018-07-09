@@ -1,5 +1,5 @@
 
-const logger = require ('./logger');
+const log = require ('./logger');
 
 
-logger.log('Hi there');
+log('Hi there. Exporting only functions and not the entire object');
