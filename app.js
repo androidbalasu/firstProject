@@ -1,13 +1,14 @@
-const os = require('os');
+//File System module in node.
 
-var totalmemory = os.totalmem();
-var freememory = os.freemem();
+const fs = require ('fs');
 
-console.log('Total memory '+ totalmemory);
-console.log('Free memory '+ freememory);
+//Synchronous version of readdir.
+// const files = fs.readdirSync('./');
+// console.log(files);
 
-//Template string
-//ES6 / ES2015 : ECMAScript 6
+//ASynchronous version of readdir.
+fs.readdir('./', (err, files) => {
+    if(err) console.log('Error', err);
+    else console.log('Result', files);
+});
 
-console.log(`Total memory using template string: ${totalmemory}`);
-console.log(`Free memory using template string: ${freememory}`);
