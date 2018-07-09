@@ -1,5 +1,5 @@
+const path = require ('path');
 
-const log = require ('./logger');
+var pathObj = path.parse(__filename);
 
-
-log('Hi there. Exporting only functions and not the entire object');
+console.log(pathObj);
